@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Arnold's Fitness | Forge Your Legacy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700;800&amp;family=Manrope:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#4d4635",
+                        "on-primary-container": "#554300",
+                        "surface-bright": "#3a3939",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#00174b",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#735c00",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#27438a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#082b72",
+                        "tertiary-container": "#97b0ff",
+                        "on-surface-variant": "#d0c5af",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#3c2f00",
+                        "on-secondary": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "surface-tint": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "outline": "#99907c",
+                        "primary-fixed-dim": "#e9c349",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "surface-variant": "#353534",
+                        "secondary": "#c8c6c5",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-fixed": "#241a00",
+                        "primary": "#f2ca50",
+                        "secondary-container": "#4a4949",
+                        "on-tertiary-container": "#254188",
+                        "secondary-fixed": "#e5e2e1",
+                        "background": "#131313",
+                        "on-secondary-container": "#bab8b7",
+                        "surface-container-highest": "#353534",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#bfcdff",
+                        "on-error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .monolith-gradient {
+            background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, rgba(19, 19, 19, 0.9) 100%);
+        }
+
+        .gold-shimmer {
+            background: linear-gradient(90deg, #f2ca50 0%, #d4af37 100%);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-lg border-b border-surface-container-highest">
+        <div class="flex justify-between items-center px-6 py-4 md:px-8 md:py-6 max-w-7xl mx-auto">
+            <a href="#"
+                class="text-xl md:text-2xl font-black text-primary-container tracking-tighter uppercase font-headline relative z-50">
+                Arnold's Fitness
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 lg:gap-12" id="nav-menu">
+                <a class="nav-item font-headline font-bold tracking-tight border-b-2 pb-1 transition-colors duration-300 text-primary-container border-primary-container"
+                    href="#programs">Programs</a>
+                <a class="nav-item font-headline font-bold tracking-tight border-b-2 pb-1 transition-colors duration-300 text-on-surface-variant hover:text-primary-container border-transparent"
+                    href="facility.html">Gallery</a>
+                <a class="nav-item font-headline font-bold tracking-tight border-b-2 pb-1 transition-colors duration-300 text-on-surface-variant hover:text-primary-container border-transparent"
+                    href="#membership">Membership</a>
+                <a class="nav-item font-headline font-bold tracking-tight border-b-2 pb-1 transition-colors duration-300 text-on-surface-variant hover:text-primary-container border-transparent"
+                    href="#trainers">Trainers</a>
+                <a class="nav-item font-headline font-bold tracking-tight border-b-2 pb-1 transition-colors duration-300 text-on-surface-variant hover:text-primary-container border-transparent"
+                    href="#testimonials">Testimonials</a>
+            </div>
+
+            <div class="flex items-center gap-4 relative z-50">
+                <button
+                    class="bg-primary hover:bg-primary-container text-on-primary px-5 py-2 md:px-6 md:py-2 rounded-sm font-label text-[10px] font-bold uppercase tracking-[0.1rem] transition-all active:scale-95 hidden sm:block">
+                    Join Now
+                </button>
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu"
+            class="absolute top-0 left-0 w-full h-screen bg-surface/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 md:hidden">
+            <a class="mobile-nav-item font-headline text-3xl font-bold tracking-tight text-on-surface hover:text-primary transition-colors"
+                href="#programs">Programs</a>
+            <a class="mobile-nav-item font-headline text-3xl font-bold tracking-tight text-on-surface hover:text-primary transition-colors"
+                href="facility.html">Gallery</a>
+            <a class="mobile-nav-item font-headline text-3xl font-bold tracking-tight text-on-surface hover:text-primary transition-colors"
+                href="#membership">Membership</a>
+            <a class="mobile-nav-item font-headline text-3xl font-bold tracking-tight text-on-surface hover:text-primary transition-colors"
+                href="#trainers">Trainers</a>
+            <a class="mobile-nav-item font-headline text-3xl font-bold tracking-tight text-on-surface hover:text-primary transition-colors"
+                href="#testimonials">Testimonials</a>
+            <button
+                class="bg-primary text-on-primary px-8 py-3 mt-4 rounded-sm font-label text-xs font-bold uppercase tracking-[0.2rem] transition-all active:scale-95">
+                Join Now
+            </button>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Arnold's Fitness Hero" class="w-full h-full object-cover opacity-40 grayscale"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyj7QgV13Z7Qk8300_28gXyA1QhcQ2-q-RpB60KsMXolbx8prZsBaJG0u0j398sALvvCxYpiU-EXdVmxSUa_kPxZukW8N8smcR9GVi7aoJflFvYNstYukLZ9VFgPK4vWPwjlpH5dfL4BT21IhehlJXQyqRYYVBGNh0ahRiDzL5xNJqfK7Xrzts7U_LqY-hcrGudLSphNu-f_JVBT5IKpRI2xamEPbmiUeC6xRTrTSoF0C38ZaxAtXHZe9g-Mj6PNbndiU6qU-qIg" />
+                <div class="absolute inset-0 monolith-gradient"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 sm:px-6 w-full">
+                <h1
+                    class="font-headline text-5xl sm:text-7xl md:text-9xl font-extrabold tracking-tighter text-on-surface mb-6 leading-none">
+                    FORGE YOUR <br /> <span class="text-primary italic">LEGACY</span>
+                </h1>
+                <p
+                    class="font-body text-on-surface-variant text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 tracking-wide px-4">
+                    Elevate your physical form in the sanctuary of elite performance. Kalidasa Rd's premier destination for
+                    those who demand excellence.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto px-6">
+                    <a href="facility.html"
+                        class="w-full sm:w-auto border border-outline-variant/40 text-center text-on-surface px-8 md:px-10 py-4 rounded-sm font-label text-sm font-bold uppercase tracking-[0.2rem] backdrop-blur-sm hover:bg-surface-container-high active:scale-95 transition-all">
+                        Explore Facility
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+                <span class="font-label text-[10px] uppercase tracking-[0.3rem]">Scroll</span>
+                <div class="w-px h-12 bg-primary"></div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="programs" class="py-20 md:py-32 px-6 md:px-8 bg-surface">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="relative hidden sm:block">
+                    <div
+                        class="absolute -top-8 -left-8 md:-top-12 md:-left-12 w-48 h-48 md:w-64 md:h-64 border border-primary/20 z-0">
+                    </div>
+                    <img alt="Dumbbells on a rack"
+                        class="relative z-10 w-full h-[400px] md:h-[600px] object-cover grayscale rounded-sm"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2G16eipPGtsagtZc6lU0q8IOjkngc-bYDlBwhcyuUZcYhDLGlCxxfibylG91ieg8UiykYaXf2WRwI5xr0QiEXaquaK6k3owLsVp_u6DHjgLxTEAqHQEwIBjWjN_UPKzJyxR6xG2ah7CNwQaMfN2gkccYbgi8u-Z0x8AR5zdtMQ8r6VaIwdqHuRSLDT6xTQbGEE_NQ3IU3tbqBQ65dMj5El-sFH9tDhYh7BV5n4mBm48t362xvYB0R2cGHZtHwfcsuvkQMnkN2uA"
+                        loading="lazy" />
+                </div>
+                <div class="space-y-6 md:space-y-8">
+                    <span class="font-label text-primary text-xs font-bold uppercase tracking-[0.4rem]">Our
+                        Philosophy</span>
+                    <h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tight leading-tight">Beyond the
+                        <br /> Standard.</h2>
+                    <p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                        At Arnold's Fitness, we don't just provide equipment; we curate an atmosphere of focus. Located
+                        in the heart of Kalidasa Rd, our facility is designed for the modern athlete—minimalist, powerful,
+                        and uncompromising.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-icon="check_circle"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="font-label uppercase tracking-widest text-sm">Elite Personal Coaching</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-icon="check_circle"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="font-label uppercase tracking-widest text-sm">Customized Nutrition
+                                Protocols</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-icon="check_circle"
+                                style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <span class="font-label uppercase tracking-widest text-sm">24/7 Monolith Access</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Tiers -->
+        <section id="membership" class="py-20 md:py-32 px-6 md:px-8 bg-surface-container-lowest">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 md:mb-24">
+                    <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Membership</h2>
+                    <p
+                        class="font-label text-primary uppercase tracking-[0.2rem] sm:tracking-[0.3rem] text-xs sm:text-sm font-bold">
+                        Invest in your evolution</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Essential -->
+                    <div
+                        class="bg-surface p-12 flex flex-col justify-between border-t-4 border-surface-container-high hover:border-primary transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
+                        <div>
+                            <span
+                                class="font-label text-xs uppercase tracking-[0.2rem] text-on-surface-variant">Essential</span>
+                            <div class="mt-4 mb-8">
+                                <span class="font-headline text-4xl font-bold">₹3,000</span>
+                                <span class="text-on-surface-variant text-sm tracking-widest">/mo</span>
+                            </div>
+                            <ul class="space-y-4 mb-12">
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">Full
+                                    Gym Access</li>
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">Locker
+                                    Room Suite</li>
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">
+                                    Entry-level Evaluation</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="w-full py-4 border border-outline-variant/30 font-label text-[10px] font-bold uppercase tracking-[0.2rem] group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all">Select
+                            Tier</button>
+                    </div>
+                    <!-- Elite (Featured) -->
+                    <div
+                        class="bg-surface-container-highest p-12 flex flex-col justify-between border-t-4 border-primary shadow-2xl relative hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="absolute top-0 right-12 bg-primary text-on-primary font-label text-[8px] font-bold px-4 py-1 uppercase tracking-widest">
+                            Most Coveted</div>
+                        <div>
+                            <span class="font-label text-xs uppercase tracking-[0.2rem] text-primary">Elite</span>
+                            <div class="mt-4 mb-8">
+                                <span class="font-headline text-5xl font-bold">₹5,000</span>
+                                <span class="text-on-surface-variant text-sm tracking-widest">/mo</span>
+                            </div>
+                            <ul class="space-y-4 mb-12">
+                                <li class="text-on-surface font-bold text-xs uppercase tracking-widest">All Essential
+                                    Benefits</li>
+                                <li class="text-on-surface font-bold text-xs uppercase tracking-widest">4 Personal
+                                    Sessions</li>
+                                <li class="text-on-surface font-bold text-xs uppercase tracking-widest">Biometric
+                                    Tracking</li>
+                                <li class="text-on-surface font-bold text-xs uppercase tracking-widest">Protein Lounge
+                                    Access</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="w-full py-4 gold-shimmer text-on-primary font-label text-[10px] font-bold uppercase tracking-[0.2rem] hover:opacity-90">Join
+                            Elite</button>
+                    </div>
+                    <!-- Monolith -->
+                    <div
+                        class="bg-surface p-12 flex flex-col justify-between border-t-4 border-surface-container-high hover:border-primary transition-all duration-300 group hover:shadow-2xl hover:-translate-y-1">
+                        <div>
+                            <span
+                                class="font-label text-xs uppercase tracking-[0.2rem] text-on-surface-variant">Monolith</span>
+                            <div class="mt-4 mb-8">
+                                <span class="font-headline text-4xl font-bold">₹8,000</span>
+                                <span class="text-on-surface-variant text-sm tracking-widest">/mo</span>
+                            </div>
+                            <ul class="space-y-4 mb-12">
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">All
+                                    Elite Benefits</li>
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">
+                                    Unlimited Training</li>
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">VIP
+                                    Recovery Zone</li>
+                                <li class="text-on-surface-variant text-xs uppercase tracking-widest opacity-60">Guest
+                                    Passes</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="w-full py-4 border border-outline-variant/30 font-label text-[10px] font-bold uppercase tracking-[0.2rem] group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all">Select
+                            Tier</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section id="locations" class="py-20 md:py-32 px-6 md:px-8 bg-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 md:mb-24">
+                    <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Our Branches</h2>
+                    <p class="font-label text-primary uppercase tracking-[0.2rem] sm:tracking-[0.3rem] text-xs sm:text-sm font-bold">Find your nearest sanctuary</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Branch 1 -->
+                    <div class="bg-surface-container-lowest p-10 border-t-2 border-surface-container-high hover:border-primary transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-sm mb-8 group-hover:bg-primary transition-colors">
+                            <span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4">Kalidasa Road</h3>
+                        <p class="font-body text-on-surface-variant text-sm mb-12 leading-relaxed opacity-70">Kalidasa Rd, Vijayanagar 1st Stage, Vijayanagar, Mysuru, Karnataka 570017</p>
+                        <a href="https://share.google/rhNqcwztslMufuCRI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-4 text-primary font-label text-[10px] font-bold uppercase tracking-[0.2rem] group-hover:gap-6 transition-all">
+                            Open in Maps <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <!-- Branch 2 -->
+                    <div class="bg-surface-container-lowest p-10 border-t-2 border-surface-container-high hover:border-primary transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-sm mb-8 group-hover:bg-primary transition-colors">
+                            <span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4">Saraswathipuram</h3>
+                        <p class="font-body text-on-surface-variant text-sm mb-12 leading-relaxed opacity-70">59/A 1 st main 5 th cross saraswathipuram mysuru 570009 near, opposite Hanumanthu New Hotel Devi Annex Non Vegetarian, opp. Devi Hotel, Karnataka 570009</p>
+                        <a href="https://share.google/G2scZFWoTNwN5YYJt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-4 text-primary font-label text-[10px] font-bold uppercase tracking-[0.2rem] group-hover:gap-6 transition-all">
+                            Open in Maps <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <!-- Branch 3 -->
+                    <div class="bg-surface-container-lowest p-10 border-t-2 border-surface-container-high hover:border-primary transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-surface-container-high flex items-center justify-center rounded-sm mb-8 group-hover:bg-primary transition-colors">
+                            <span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold mb-4">Siddhartha Layout</h3>
+                        <p class="font-body text-on-surface-variant text-sm mb-12 leading-relaxed opacity-70">Sathya Marga, opp. Geetha institutions, Siddhartha Layout, Mysuru, Karnataka 57001</p>
+                        <a href="https://share.google/f9H99Rc0RywZeS0Nw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-4 text-primary font-label text-[10px] font-bold uppercase tracking-[0.2rem] group-hover:gap-6 transition-all">
+                            Open in Maps <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainers Section -->
+        <section id="trainers" class="py-20 md:py-32 px-6 md:px-8 bg-surface overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
+                    <div>
+                        <span
+                            class="font-label text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2rem] md:tracking-[0.4rem]">The
+                            Architects</span>
+                        <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl font-bold mt-4 tracking-tight">Elite
+                            Mentorship.</h2>
+                    </div>
+                    <p
+                        class="max-w-md font-body text-on-surface-variant text-sm md:text-base italic border-l-2 border-primary pl-4 md:pl-6 leading-relaxed">
+                        "Your potential is limited only by your guidance. Work with the best to become the best."
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    <!-- Trainer 1 -->
+                    <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-low">
+                        <img alt="Vikram Singh"
+                            class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe0zp_ATmxxW9zruSlvSjCamNCH0mBGIyfTevO5PANt9doNBL-Ri1oC65jv4VVi3aj4U-EA_lIm7GlulIfC1G3jEbcUYl4DoRHmmGxJz54EmAUiUEq0qVF3MIhNkB84iMO-SC9-378XtqKYQLE9yDBZmpP_-NQykUqn-cziZKhS_F0cyGb_1U3Dgs1aNSSUZJNF9Sqe6vVZfOiBxvbN1iRiD6vqprfK4-QXFaFklkvYK0e-ASluslNvofkccrga-6XKh30d0j1ug" loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <h3 class="font-headline text-3xl font-bold text-on-surface">Vikram Singh</h3>
+                            <span class="font-label text-primary text-[10px] uppercase tracking-[0.2rem]">Strength
+                                Specialist</span>
+                        </div>
+                    </div>
+                    <!-- Trainer 2 -->
+                    <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-low mt-12 md:mt-0">
+                        <img alt="Riya Kapoor"
+                            class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC1gjo8CIRewxjZfauDtzZs_dO-P9iGPlF2DJk4GdiPf0lykH2VHCjeWyNKVTdGXHKxraR0FLMVH46KOoMpmQU_94bwgQwicrmrG981WHRxc9ERkNPD-zJxcYbKBtAhkR5ozIUW8W0zwFis0cv3rc5KwYCZdBR_q6HN67tcDi1cdlPlyrWlCb6_KpbDf9cQbG5wWhzn_nNpHPVOS1xK2K51YBg_pKC3k0ZNmLlHsdHRxIZg47m07l7naJabqoVRacF8DmgOeImZw" loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <h3 class="font-headline text-3xl font-bold text-on-surface">Riya Kapoor</h3>
+                            <span class="font-label text-primary text-[10px] uppercase tracking-[0.2rem]">Hypertrophy
+                                Expert</span>
+                        </div>
+                    </div>
+                    <!-- Trainer 3 -->
+                    <div class="group relative aspect-[3/4] overflow-hidden bg-surface-container-low mt-12 lg:mt-0">
+                        <img alt="Arjun Mehta"
+                            class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIrquha3gGXhFwoBzLcshvBfZqmB8qlYBLJrsqzN7VCQTd-FyQdF8DwZDib68jnkqyiwkVjSu1Tz6Wusrxbx3K6mNcw-MBnxnYsTmNcOAIkSI_PLxVj6jFVfy-2o2QrZgFC93Fvk4IGjUkI8KZtiUr1oXgdsFO2g8a0wuLXjNkx7NrcdE4iRcVtZ33lT-NRQwh_7aGcaGc2BWmI2k4OL70LWdBMrXJtJLDxZvXRazYqJofjNQ2wP34oshsqBGYV2bOiNMjF4-W5w" loading="lazy" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <h3 class="font-headline text-3xl font-bold text-on-surface">Arjun Mehta</h3>
+                            <span class="font-label text-primary text-[10px] uppercase tracking-[0.2rem]">Performance
+                                Coach</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-20 md:py-32 px-6 md:px-8 bg-surface-container-lowest">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 md:mb-24">
+                    <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl font-bold">Reviews</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-center">
+                    <!-- Review 1 -->
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="flex items-center gap-1 text-primary">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p
+                            class="font-body text-sm md:text-base text-on-surface-variant leading-relaxed opacity-90 max-w-sm">
+                            "I love the outdoor area! And the atmosphere is also great! It doesn't feel like a
+                            commercial gym which is always a plus in my book."
+                        </p>
+                        <div class="flex items-center gap-3 mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5">
+                                <path fill="#EA4335"
+                                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                                <path fill="#4285F4"
+                                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                                <path fill="#FBBC05"
+                                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                                <path fill="#34A853"
+                                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                            </svg>
+                            <span class="font-label font-bold text-on-surface text-sm">Floyd Garner</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="flex items-center gap-1 text-primary">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p
+                            class="font-body text-sm md:text-base text-on-surface-variant leading-relaxed opacity-90 max-w-sm">
+                            "Perfect Gym. Open 24/7, motivating environment, and great selection of equipment."
+                        </p>
+                        <div class="flex items-center gap-3 mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5">
+                                <path fill="#EA4335"
+                                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                                <path fill="#4285F4"
+                                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                                <path fill="#FBBC05"
+                                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                                <path fill="#34A853"
+                                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                            </svg>
+                            <span class="font-label font-bold text-on-surface text-sm">Calum Russell</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="flex items-center gap-1 text-primary">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p
+                            class="font-body text-sm md:text-base text-on-surface-variant leading-relaxed opacity-90 max-w-sm">
+                            "This gym is so great! The supportive atmosphere is refreshing, and everyone is very
+                            friendly."
+                        </p>
+                        <div class="flex items-center gap-3 mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5">
+                                <path fill="#EA4335"
+                                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                                <path fill="#4285F4"
+                                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                                <path fill="#FBBC05"
+                                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                                <path fill="#34A853"
+                                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                            </svg>
+                            <span class="font-label font-bold text-on-surface text-sm">Michelle Browning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact/CTA Section -->
+        <section class="py-20 md:py-32 px-6 md:px-8 bg-surface relative overflow-hidden">
+            <div
+                class="absolute right-0 top-0 w-1/3 h-full bg-surface-container-low -skew-x-12 translate-x-1/2 z-0 hidden md:block">
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="font-headline text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 md:mb-8">
+                        Ready to <br class="hidden md:block" /> Begin?</h2>
+                    <p
+                        class="font-body text-on-surface-variant text-base md:text-xl mb-8 md:mb-12 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Join the collective of the disciplined. Visit us on Kalidasa Rd or message us directly to schedule
+                        your private walkthrough.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-6">
+                            <span class="material-symbols-outlined text-primary mt-1"
+                                data-icon="location_on">location_on</span>
+                            <div class="flex flex-col gap-1">
+                                <span class="font-label uppercase tracking-widest text-xs font-bold text-primary">Kalidasa Road</span>
+                                <span class="font-label uppercase tracking-[0.1rem] text-[10px] opacity-70 leading-relaxed md:w-64">Kalidasa Rd, Vijayanagar 1st Stage, Mysuru, 570017</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <span class="material-symbols-outlined text-primary mt-1"
+                                data-icon="location_on">location_on</span>
+                            <div class="flex flex-col gap-1">
+                                <span class="font-label uppercase tracking-widest text-xs font-bold text-primary">Saraswathipuram</span>
+                                <span class="font-label uppercase tracking-[0.1rem] text-[10px] opacity-70 leading-relaxed md:w-64">59/A 1st main 5th cross, Saraswathipuram</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <span class="material-symbols-outlined text-primary mt-1"
+                                data-icon="location_on">location_on</span>
+                            <div class="flex flex-col gap-1">
+                                <span class="font-label uppercase tracking-widest text-xs font-bold text-primary">Siddhartha Layout</span>
+                                <span class="font-label uppercase tracking-[0.1rem] text-[10px] opacity-70 leading-relaxed md:w-64">Siddhartha Layout, Mysuru</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+                            <span class="font-label uppercase tracking-widest text-sm">concierge@arnoldsfitness.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-auto">
+                    <a class="inline-flex items-center gap-6 gold-shimmer text-on-primary px-12 py-6 rounded-sm font-label text-sm font-bold uppercase tracking-[0.3rem] shadow-[0px_24px_48px_rgba(212,175,55,0.2)] active:scale-95 transition-transform group"
+                        href="https://wa.me/917349788244" target="_blank" rel="noopener noreferrer">
+                        Message on WhatsApp
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t border-primary/20 bg-[#0e0e0e]">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-8 md:py-12 w-full max-w-7xl mx-auto gap-8">
+            <a href="#" class="text-xl md:text-lg font-bold text-primary-container font-headline tracking-tighter">
+                Arnold's Fitness
+            </a>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                <a class="font-label text-[10px] uppercase tracking-[0.1rem] text-on-surface-variant/60 hover:text-primary-container transition-colors"
+                    href="https://www.instagram.com/arnoldfitnessmysuru/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a class="font-label text-[10px] uppercase tracking-[0.1rem] text-on-surface-variant/60 hover:text-primary-container transition-colors"
+                    href="#">Facebook</a>
+            </div>
+            <div
+                class="font-label text-[10px] uppercase tracking-[0.1rem] text-on-surface-variant/60 text-center md:text-right">
+                © 2024 Arnold's Fitness. The Monolith Standard.
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- ScrollSpy Logic ---
+            const navItems = document.querySelectorAll(".nav-item");
+            const sections = Array.from(navItems).map(item => document.querySelector(item.getAttribute("href")));
+
+            const activeClasses = ["text-primary-container", "border-primary-container"];
+            const inactiveClasses = ["text-on-surface-variant", "border-transparent"];
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const activeId = entry.target.id;
+                            navItems.forEach((item) => {
+                                if (item.getAttribute("href") === `#${activeId}`) {
+                                    item.classList.remove(...inactiveClasses);
+                                    item.classList.add(...activeClasses);
+                                } else {
+                                    item.classList.remove(...activeClasses);
+                                    item.classList.add(...inactiveClasses);
+                                }
+                            });
+                        }
+                    });
+                },
+                { rootMargin: "-50% 0px -50% 0px" }
+            );
+
+            sections.forEach((section) => {
+                if (section) observer.observe(section);
+            });
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = mobileMenuBtn.querySelector('span');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('translate-x-full')) {
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('translate-x-0');
+                    icon.innerText = 'close';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenu.classList.remove('translate-x-0');
+                    icon.innerText = 'menu';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close menu on link click
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenu.classList.remove('translate-x-0');
+                    icon.innerText = 'menu';
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // --- Smooth Scroll Offset Fix for Fixed Header ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerOffset = 100; // Adjust based on your nav height
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Facility | Arnold's Fitness</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700;800&amp;family=Manrope:wght@300;400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#4d4635",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#3c2f00",
+                        "primary-container": "#d4af37",
+                        "primary": "#f2ca50",
+                        "background": "#131313",
+                        "surface-container-low": "#1c1b1b"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem" }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-shimmer {
+            background: linear-gradient(90deg, #f2ca50 0%, #d4af37 100%);
+        }
+        body {
+            background-color: #0e0e0e;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body p-6 md:p-12">
+    <!-- Back Button -->
+    <a href="index.html" class="fixed top-8 left-8 z-50 p-3 bg-surface-container-high/50 backdrop-blur-md rounded-full text-on-surface-variant hover:text-primary hover:border-primary border border-transparent transition-all group shadow-xl">
+        <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+    </a>
+
+    <main class="max-w-7xl mx-auto">
+        <header class="mb-16 md:mb-24">
+            <span class="font-label text-primary text-xs font-bold uppercase tracking-[0.4rem]">The Sanctuary</span>
+            <h1 class="font-headline text-5xl md:text-8xl font-black mt-4 tracking-tighter uppercase italic">
+                Our <span class="text-primary-container">Facility.</span>
+            </h1>
+            <p class="max-w-2xl font-body text-on-surface-variant text-lg mt-6 leading-relaxed opacity-80">
+                A masterpiece of industrial design and athletic engineering. Every square inch of the Monolith is crafted for the pursuit of physical perfection.
+            </p>
+        </header>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Main Floor -->
+            <div class="group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low">
+                <img alt="Gym Interior" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="assets/gallery/gym1.webp" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                    <h3 class="font-headline text-2xl font-bold">Main Iron Floor</h3>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">Precision Engineered</p>
+                </div>
+            </div>
+
+            <!-- Cardio Zone -->
+            <div class="group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low">
+                <img alt="Professional Equipment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="assets/gallery/gym2.webp" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                    <h3 class="font-headline text-2xl font-bold">Elite Equipment</h3>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">Hammer Strength Series</p>
+                </div>
+            </div>
+
+            <!-- Recovery -->
+            <div class="group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low">
+                <img alt="Recovery Zone" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="assets/gallery/gym3.webp" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                    <h3 class="font-headline text-2xl font-bold">Recovery Sanctuary</h3>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">Deep Tissue Focus</p>
+                </div>
+            </div>
+            
+            <!-- Additional Space for your photos -->
+            <div class="border-2 border-dashed border-outline-variant/30 aspect-video md:aspect-square flex items-center justify-center p-12 text-center">
+                <div class="space-y-4">
+                    <span class="material-symbols-outlined text-4xl text-primary/30">add_photo_alternate</span>
+                    <p class="font-label text-[10px] uppercase tracking-[0.2rem] text-on-surface-variant/40">Drop your gym photos<br/>in assets/gallery/</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-32 pb-12 border-t border-outline-variant/20 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        <p class="font-label text-[10px] uppercase tracking-[0.2rem] text-on-surface-variant/40">© 2024 Arnold's Fitness | Kalidasa Rd</p>
+        <div class="flex gap-8 items-center">
+             <a href="https://www.instagram.com/arnoldfitnessmysuru/" target="_blank" rel="noopener noreferrer" class="p-2 text-on-surface-variant/60 hover:text-primary transition-colors group">
+                <span class="material-symbols-outlined text-xl">language</span>
+             </a>
+             <a href="#" class="p-2 text-on-surface-variant/60 hover:text-primary transition-colors group">
+                <span class="material-symbols-outlined text-xl">public</span>
+             </a>
+             <a href="index.html" class="p-2 text-primary hover:text-primary-container transition-colors group border-l border-outline-variant/30 pl-8 ml-4">
+                <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">home</span>
+             </a>
+        </div>
+    </footer>
+</body>
+</html>

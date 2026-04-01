@@ -932,8 +932,39 @@
                 }
             });
         }
+
+        // --- Visitor Tracking ---
+        async function trackVisitor() {
+            try {
+                let visitorId = localStorage.getItem('arnold_visitor_id');
+                const lastVisit = localStorage.getItem('arnold_last_visit');
+                const now = Date.now();
+                const OneDay = 24 * 60 * 60 * 1000;
+
+                // Only track if no visit in last 24h
+                if (!lastVisit || (now - parseInt(lastVisit)) > OneDay) {
+                    if (!visitorId) {
+                        visitorId = crypto.randomUUID();
+                        localStorage.setItem('arnold_visitor_id', visitorId);
+                    }
+
+                    const { error } = await _supabase.from('visitors').insert([{
+                        visitor_id: visitorId,
+                        user_agent: navigator.userAgent,
+                        path: window.location.pathname
+                    }]);
+
+                    if (!error) {
+                        localStorage.setItem('arnold_last_visit', now.toString());
+                        console.log('Evolution tracked.');
+                    }
+                }
+            } catch (err) {
+                console.error('Tracking offline.', err);
+            }
+        }
+        trackVisitor();
     </script>
 </body>
-
 
 </html>

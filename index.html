@@ -987,8 +987,11 @@
             if (exploreBtn && freeTrialSection) {
                 exploreBtn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    // Let smooth scroll interceptors handle the normal scroll logic? 
-                    // No, override to do modal checking.
+                    if (localStorage.getItem('arnold_lead_captured') === 'true') {
+                        window.location.href = 'facility.html';
+                        return;
+                    }
+                    
                     const rect = freeTrialSection.getBoundingClientRect();
                     // If section is below the viewport
                     if (rect.top > window.innerHeight * 0.8) {
@@ -1045,6 +1048,20 @@
                     // Success Feedback
                     alert("Thanks! We will contact you soon.");
                     this.reset();
+                    localStorage.setItem('arnold_lead_captured', 'true');
+                    
+                    // Close modal and redirect to gallery if they were trying to explore facility
+                    if (document.getElementById('evolution-modal') && !document.getElementById('evolution-modal').classList.contains('hidden')) {
+                        window.location.href = 'facility.html';
+                    } else {
+                        // Even if filled straight from the section, redirecting them to what they might want to see is a good idea.
+                        // Or we can leave them there. 
+                        const redirectConfirmed = confirm("Would you like to explore our facility gallery now?");
+                        if (redirectConfirmed) {
+                            window.location.href = 'facility.html';
+                        }
+                    }
+
                 } catch (err) {
                     console.error('Database Sync Error:', err.message);
                     alert("Submission failed. Please check your connection.");

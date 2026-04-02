@@ -67,7 +67,7 @@
         <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Main Floor -->
             <div class="group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low">
-                <img alt="Gym Interior" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="assets/gallery/gym1.webp" loading="lazy" />
+                <img alt="Gym Interior" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/gallery/gym1.webp" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
                     <h3 class="font-headline text-2xl font-bold">Main Iron Floor</h3>
                     <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">Precision Engineered</p>
@@ -76,7 +76,7 @@
 
             <!-- Cardio Zone -->
             <div class="group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low">
-                <img alt="Professional Equipment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="assets/gallery/gym2.webp" loading="lazy" />
+                <img alt="Professional Equipment" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/gallery/gym2.webp" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
                     <h3 class="font-headline text-2xl font-bold">Elite Equipment</h3>
                     <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">Hammer Strength Series</p>
@@ -85,18 +85,10 @@
 
             <!-- Recovery -->
             <div class="group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low">
-                <img alt="Recovery Zone" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="assets/gallery/gym3.webp" loading="lazy" />
+                <img alt="Recovery Zone" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/gallery/gym3.webp" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
                     <h3 class="font-headline text-2xl font-bold">Recovery Sanctuary</h3>
                     <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">Deep Tissue Focus</p>
-                </div>
-            </div>
-            
-            <!-- Additional Space for your photos -->
-            <div class="border-2 border-dashed border-outline-variant/30 aspect-video md:aspect-square flex items-center justify-center p-12 text-center">
-                <div class="space-y-4">
-                    <span class="material-symbols-outlined text-4xl text-primary/30">add_photo_alternate</span>
-                    <p class="font-label text-[10px] uppercase tracking-[0.2rem] text-on-surface-variant/40">Drop your gym photos<br/>in assets/gallery/</p>
                 </div>
             </div>
         </div>
@@ -145,7 +137,7 @@
                         const item = document.createElement('div');
                         item.className = 'group relative aspect-video md:aspect-square overflow-hidden bg-surface-container-low';
                         item.innerHTML = `
-                            <img alt="${img.title}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105" src="${img.image_url}" loading="lazy" />
+                            <img alt="${img.title}" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="${img.image_url}" loading="lazy" />
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
                                 <h3 class="font-headline text-2xl font-bold">${img.title || 'Facility Aspect'}</h3>
                                 <p class="text-on-surface-variant text-xs uppercase tracking-widest mt-2">${img.is_featured ? 'Featured View' : 'Arnold\'s Fitness'}</p>
